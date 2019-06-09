@@ -1,0 +1,1490 @@
+[
+  {
+    "type": "Pistol",
+    "name": "Beretta 92a\n +6 variants",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "92FS\n\t\t\t\t\t\t\t - Variant of Beretta 92",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "92G\n\t\t\t\t\t\t\t - Variant of Beretta 92",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "92S\n\t\t\t\t\t\t\t - Variant of Beretta 92",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "92SB\n\t\t\t\t\t\t\t - Variant of Beretta 92",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "92D\n\t\t\t\t\t\t\t - Variant of Beretta 92",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "92DS\n\t\t\t\t\t\t\t - Variant of Beretta 92",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Colt M1911\n +11 variants",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Thompson\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Springfield\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "M1911-A1\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Norinco M1911-A1\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Armscor M1911-A1\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "IDS Ranger\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Para Ordnance\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Imbel GC 0.45\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Taurus PT 1911\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Springfield UC9\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Thompson 0.45\n\t\t\t\t\t\t\t - Variant of Colt M1911",
+    "calibre": "0.45",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock\n +23 variants",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 17\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 18\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 19\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 20\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "10x25mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 21\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.45 ACP",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 22\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.4",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 23\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.4",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 24\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.4",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 25\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.38",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 26\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 27\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.4",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 28\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.38",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 29\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "10x25mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 30\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.45 ACP",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 31\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.357",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 32\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.357",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 33\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.357",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 34\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 35\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.4",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 36\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.45 ACP",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 37\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.45 GAP",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 38\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.45 GAP",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Glock 39\n\t\t\t\t\t\t\t - Variant of Glock",
+    "calibre": "0.45 GAP",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Tokarev\n +6 variants",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Tokarev TT-33\n\t\t\t\t\t\t\t - Variant of Tokarev",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Type 51\n\t\t\t\t\t\t\t - Variant of Tokarev",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Type 54\n\t\t\t\t\t\t\t - Variant of Tokarev",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Model 48\n\t\t\t\t\t\t\t - Variant of Tokarev",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Pistol",
+    "name": "Type 68\n\t\t\t\t\t\t\t - Variant of Tokarev",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Pistol",
+    "name": "M57\n\t\t\t\t\t\t\t - Variant of Tokarev",
+    "calibre": "7.62x25mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, Central America"
+  },
+  {
+    "type": "Rifle",
+    "name": "FN FAL\n +11 variants",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "FN 50-00\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "FN 50-64\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "FN 50-63\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "FN 50-41\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "L1A1\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Imbel SAR\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Imbel Para-SAR\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "C1A1\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "1A1\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "R1\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "SA58\n\t\t\t\t\t\t\t - Variant of FN FAL",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Pacific, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Type 81\n +1 variants",
+    "calibre": "7.62x39mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia"
+  },
+  {
+    "type": "Rifle",
+    "name": "Type 81-1\n\t\t\t\t\t\t\t - Variant of",
+    "calibre": "7.62x39mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia"
+  },
+  {
+    "type": "Rifle",
+    "name": "Heckler & Koch G3\n +12 variants",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3A1\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3A2\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3A3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3-A1\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "AG-3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3-A3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3A3ZF\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3A4\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3-A4\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3A1-1\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3P4\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "G3K\n\t\t\t\t\t\t\t - Variant of Heckler & Koch G3",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, South Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Simonov SKS\n +4 variants",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Type 56 Carbine\n\t\t\t\t\t\t\t - Variant of Simonov SKS",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Type 63 China\n\t\t\t\t\t\t\t - Variant of Simonov SKS",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Type 63 North Korea\n\t\t\t\t\t\t\t - Variant of Simonov SKS",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M59/66\n\t\t\t\t\t\t\t - Variant of Simonov SKS",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M14\n +7 variants",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Mk 14 EBR\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M 14 Tactical\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M14 DMR\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M39 EMR\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M21\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "M25\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Rifle",
+    "name": "Mini 14\n\t\t\t\t\t\t\t - Variant of M14",
+    "calibre": "5.56x45mm, 7.62x51mm",
+    "regions": "Western Europe, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Galil\n +8 variants",
+    "calibre": "5.56x45mm, 7.62x51mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Galil AR\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm, 7.62x51mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Galil ARM\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm, 7.62x51mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Galil SAR\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm, 7.62x51mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Vektor R4\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Vektor LM4\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Vektor R5\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Vektor LM5\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Vektor R6\n\t\t\t\t\t\t\t - Variant of Galil",
+    "calibre": "5.56x45mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, Pacific, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SIG SG 540\n +8 variants",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 542\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 543\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 550\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 551\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 552\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 553\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 540-1\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "SG 542-1\n\t\t\t\t\t\t\t - Variant of SIG SG 540",
+    "calibre": "7.62x51mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-100\n +5 variants",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia, South Asia, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-101\n\t\t\t\t\t\t\t - Variant of AK-100",
+    "calibre": "5.56x45mm",
+    "regions": "Eastern Europe, Central Asia, South Asia, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-102\n\t\t\t\t\t\t\t - Variant of AK-100",
+    "calibre": "5.56x45mm",
+    "regions": "Eastern Europe, Central Asia, South Asia, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-103\n\t\t\t\t\t\t\t - Variant of AK-100",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Central Asia, South Asia, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-104\n\t\t\t\t\t\t\t - Variant of AK-100",
+    "calibre": "7.62x39mm",
+    "regions": "Eastern Europe, Central Asia, South Asia, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-105\n\t\t\t\t\t\t\t - Variant of AK-100",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia, South Asia, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Heckler & Koch HK33\n +4 variants",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, East Asia, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "HK 33\n\t\t\t\t\t\t\t - Variant of Heckler & Koch HK33",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, East Asia, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "HK 33A2\n\t\t\t\t\t\t\t - Variant of Heckler & Koch HK33",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, East Asia, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "HK 33A3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch HK33",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, East Asia, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "HK 53\n\t\t\t\t\t\t\t - Variant of Heckler & Koch HK33",
+    "calibre": "5.56x45mm",
+    "regions": "Western Europe, East Asia, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Kalashnikov AK-47\n +5 variants",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-47 pre 1949\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-47",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-47 post 1949\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-47",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-47S\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-47",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Type 56\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-47",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "M70\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-47",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Kalashnikov AK-74\n +8 variants",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AK-74M\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AR-M1\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm, 5.56x45mm, 7.62x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AKS-74\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AKS-74U\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AR-SF\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Onyx\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AR-M1F\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm, 5.56x45mm, 7.62x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Tantal\n\t\t\t\t\t\t\t - Variant of Kalashnikov AK-74",
+    "calibre": "5.45x39mm",
+    "regions": "Eastern Europe, Central Asia"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Kalashnikov AKM\n +12 variants",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "AKMS\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Type 56\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Type 56-1\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Type 56-2\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Misr\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "MPiKM\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Tabuk\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "Type 68\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "PMKM\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "RomArm AKM\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "M70\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Assault Rifle",
+    "name": "MPiKMS-72\n\t\t\t\t\t\t\t - Variant of Kalashnikov AKM",
+    "calibre": "7.62x39mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "PK\n +9 variants",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "PKM\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "PKT\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "PKD\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "MG\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "MG-M1\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "Type 80\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "Karabin Maszynowy\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "M84\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "General Purpose Machine Gun",
+    "name": "PKMSN\n\t\t\t\t\t\t\t - Variant of PK",
+    "calibre": "7.62x54R",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Anti-Materiel Rifle",
+    "name": "Barret M82\n +4 variants",
+    "calibre": "12.7x99mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Anti-Materiel Rifle",
+    "name": "M107\n\t\t\t\t\t\t\t - Variant of Barret M82",
+    "calibre": "12.7x99mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Anti-Materiel Rifle",
+    "name": "M107CQ\n\t\t\t\t\t\t\t - Variant of Barret M82",
+    "calibre": "12.7x99mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Anti-Materiel Rifle",
+    "name": "M107A1\n\t\t\t\t\t\t\t - Variant of Barret M82",
+    "calibre": "12.7x99mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Anti-Materiel Rifle",
+    "name": "M95\n\t\t\t\t\t\t\t - Variant of Barret M82",
+    "calibre": "12.7x99mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "Heckler & Koch MP5\n +18 variants",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5A2\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5A3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5A4\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5A5\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SFA2\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SFA3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5-NFS\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5-NRS\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5K\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MPKA4\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5K-N\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5K-PDW\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SD1\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SD2\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SD3\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SD4\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SD5\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "MP5SD6\n\t\t\t\t\t\t\t - Variant of Heckler & Koch MP5",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "Uzi\n +6 variants",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "Mini-Uzi\n\t\t\t\t\t\t\t - Variant of Uzi",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "Micro-Uzi\n\t\t\t\t\t\t\t - Variant of Uzi",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "9mm SMG\n\t\t\t\t\t\t\t - Variant of Uzi",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "Ero\n\t\t\t\t\t\t\t - Variant of Uzi",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "Mini-Ero\n\t\t\t\t\t\t\t - Variant of Uzi",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Sub-machine Gun",
+    "name": "S-1\n\t\t\t\t\t\t\t - Variant of Uzi",
+    "calibre": "9x19mm",
+    "regions": "Western Europe, Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "DShk\n +6 variants",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "DShk-38\n\t\t\t\t\t\t\t - Variant of DShk",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "DShK-38/46\n\t\t\t\t\t\t\t - Variant of DShk",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "Type 54\n\t\t\t\t\t\t\t - Variant of DShk",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "MGD-12.7\n\t\t\t\t\t\t\t - Variant of DShk",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "Type 54 anti-aircraft\n\t\t\t\t\t\t\t - Variant of DShk",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Heavy Machine Gun",
+    "name": "12.7mm HMG\n\t\t\t\t\t\t\t - Variant of DShk",
+    "calibre": "12.7x107mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "M76\n +1 variants",
+    "calibre": "7.92x57mm, 7.62x51mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "Tabuk\n\t\t\t\t\t\t\t - Variant of M76",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "Dragunov SVD\n +6 variants",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "SVDS\n\t\t\t\t\t\t\t - Variant of Dragunov SVD",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "SVDK\n\t\t\t\t\t\t\t - Variant of Dragunov SVD",
+    "calibre": "9.3x64mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "SVU\n\t\t\t\t\t\t\t - Variant of Dragunov SVD",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "FPK (PSL)\n\t\t\t\t\t\t\t - Variant of Dragunov SVD",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "Type 79 (NDM-86)\n\t\t\t\t\t\t\t - Variant of Dragunov SVD",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Sniper Rifle",
+    "name": "Al-Kadesih\n\t\t\t\t\t\t\t - Variant of Dragunov SVD",
+    "calibre": "7.62x54R mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, North America, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "SPG-9\n +3 variants",
+    "calibre": "73mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "Arsenal ATG-H\n\t\t\t\t\t\t\t - Variant of SPG-9",
+    "calibre": "73mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "AMIG SPG-9\n\t\t\t\t\t\t\t - Variant of SPG-9",
+    "calibre": "73mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "RomARM AG-9\n\t\t\t\t\t\t\t - Variant of SPG-9",
+    "calibre": "73mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "B-10\n +5 variants",
+    "calibre": "82mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "Type 65\n\t\t\t\t\t\t\t - Variant of B-10",
+    "calibre": "82mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "Type 65-1\n\t\t\t\t\t\t\t - Variant of B-10",
+    "calibre": "82mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "Type 78\n\t\t\t\t\t\t\t - Variant of B-10",
+    "calibre": "82mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "RG-82\n\t\t\t\t\t\t\t - Variant of B-10",
+    "calibre": "82mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Recoilless Gun",
+    "name": "M79\n\t\t\t\t\t\t\t - Variant of B-10",
+    "calibre": "82mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America, South America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72 Law\n +10 variants",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72A2\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72A3\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72A4\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72A5\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72A6\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72A7\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72E8\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72E9\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "M72E10\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "HAR-66\n\t\t\t\t\t\t\t - Variant of M72 Law",
+    "calibre": "66mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "RPG-2\n +1 variants",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "Type 56\n\t\t\t\t\t\t\t - Variant of RPG-2",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "RPG-7\n +6 variants",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "Type 69\n\t\t\t\t\t\t\t - Variant of RPG-7",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "RPG-7V\n\t\t\t\t\t\t\t - Variant of RPG-7",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "Sakr PG-7\n\t\t\t\t\t\t\t - Variant of RPG-7",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "40mm launcher\n\t\t\t\t\t\t\t - Variant of RPG-7",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "Al-Nassira\n\t\t\t\t\t\t\t - Variant of RPG-7",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Rocket Launcher",
+    "name": "AG-7S\n\t\t\t\t\t\t\t - Variant of RPG-7",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, South Asia, East Asia, Central America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "M203\n +6 variants",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "M203A1\n\t\t\t\t\t\t\t - Variant of M203",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "M203A2\n\t\t\t\t\t\t\t - Variant of M203",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "Colt Launcher System\n\t\t\t\t\t\t\t - Variant of M203",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "Diemaco M203A1\n\t\t\t\t\t\t\t - Variant of M203",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "Maadi 40mm\n\t\t\t\t\t\t\t - Variant of M203",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "40mm T85\n\t\t\t\t\t\t\t - Variant of M203",
+    "calibre": "40x46mm",
+    "regions": "Western Europe, Middle East & North Africa, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "GP-25\n +3 variants",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, East Asia, Pacific, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "GP-30\n\t\t\t\t\t\t\t - Variant of GP-25",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, East Asia, Pacific, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "UBGL GP-25\n\t\t\t\t\t\t\t - Variant of GP-25",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, East Asia, Pacific, Central America, South America"
+  },
+  {
+    "type": "Under-Barrel Grenade Launcher",
+    "name": "Arsenal UBGL-1\n\t\t\t\t\t\t\t - Variant of GP-25",
+    "calibre": "40mm",
+    "regions": "Eastern Europe, Middle East & North Africa, Sub-Saharan Africa, Central Asia, East Asia, Pacific, Central America, South America"
+  },
+  {
+    "type": "Stand-Alone Grenade Launcher",
+    "name": "M79\n +2 variants",
+    "calibre": "40x46mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Stand-Alone Grenade Launcher",
+    "name": "KM79\n\t\t\t\t\t\t\t - Variant of M79",
+    "calibre": "40x46mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, South Asia, East Asia, Pacific, North America, Central America, South America"
+  },
+  {
+    "type": "Stand-Alone Grenade Launcher",
+    "name": "Milkor M79\n\t\t\t\t\t\t\t - Variant of M79",
+    "calibre": "40x46mm",
+    "regions": "Middle East & North Africa, Sub-Saharan Africa, South Asia, East Asia, Pacific, North America, Central America, South America"
+  }
+]
