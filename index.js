@@ -1,122 +1,99 @@
 console.clear();
 
+// Paramètres
 let height = window.innerHeight;
 let width = window.innerWidth;
+var active;
+var activeHist;
+
 // -------------------------------------------- //
 // Carte
-// récuperer les coordonnées pour dessiner les pays
-d3.json('regionsPoly.json', donnees => {
-
-  console.log(donnees)
-
-  // ici, les données sont chargées
-  const region_id = topojson.feature(donnees, donnees.objects.regionsPoly);
-
-  console.log(region_id);
-
-  const chemins = canevas.selectAll('path')
-    .data(region_id.features);
-
-  chemins.enter()
-    .append('path')
-      .attr('class','pays')
-      .attr('id', d => d.properties['NAME'])
-      .attr('d', genererChemins);
-
-});
-
-const canevas = d3.select('#map')
-  .attr('height', height / 2)
-  .attr('width', width / 4 );
-// choisir la projection
+// Choix de projection
 const maProjection = d3.geoKavrayskiy7().scale(80).translate([width /7 ,height/5 ]);
 
 // la passer en paramètre du générateur de chemins
 const genererChemins = d3.geoPath().projection(maProjection);
 
-//dessiner les chemins
-canevas.append('path')
-  .attr('class','monde')
-  .attr('d',genererChemins({type :'Sphere'}))
+// Creation canevas
+const canevas = d3.select('#map')
+  .attr('height', height / 1.5)
+  .attr('width', width / 4 )
 
+// Ajout boite click reset
+canevas.append('rect')
+  .attr('width', width/3)
+  .attr('height', height/0.5)
+  .attr('id', 'reset_map')
+  .classed('clickReset', true)
+  .on('click', reset);
+
+// Modif caneva pour avoir des groupes
+var g = canevas.append('g');
+
+// récuperer les coordonnées pour dessiner les pays
+d3.json('regionsPoly.json', donnees => {
+
+  // ici, les données sont chargées
+  const region_id = topojson.feature(donnees, donnees.objects.regionsPoly);
+
+  const chemins = g.selectAll('path')
+    .data(region_id.features)
+    .enter()
+    .append('path')
+      .attr('class','feature')
+      .attr('d', genererChemins)
+      .on('click', mapClick);
+
+});
 
 // +-------------------+---------------+----- //
 // Réseau et histogramme
+// Recuperer donnes scrapée
 d3.json("WeaponsDB.json", d => {
 
   // ----------------------------------------------- //
   // Histogramme
 
+  // Canevas
   var canvasBarres = d3.select('#hist')
     .attr('height', height / 2)
     .attr('width', width / 1.5)
 
-  var partype = d3.nest()
-    .key(function(d){
-      return d.type;
-    })
-    .rollup(function(d){
-      return d.length;
-    })
-    .entries(d)
-    .sort((a,b) => d3.ascending(a.value,b.value))
-
-  console.log(partype);
-
-  console.log(partype.type);
-
-
-  // Histogram data creating from raw
+  // Nest données par type d'armes et région distribution
   var typeParRegion = d3.nest()
     .key(d => d.type)
     .key(d => d.regions)
-    .rollup(function(d){
-      return d.length;
-    })
+    .rollup(function(d) { return d.length; })
     .entries(d)
     .sort((a,b) => d3.ascending(a.value,b.value))
 
-  console.log(typeParRegion);
-
+  // Régions de distribution, utilisé pour itérer
   const regions = ["Western Europe", "Eastern Europe",
   "Middle East & North Africa", "Sub-Saharan Africa", "Central Asia",
   "South Asia", "East Asia", "Pacific", "North America", "Central America",
   "South America"]
 
-  var histDat = [];
+  histDat = [];
+
   var tableRegionType = [];
 
   for (un of typeParRegion){    //Iterate on nested by type and region data
-
     regions.forEach(function(reg) { // Iterate on regions
-
       var valueOfRegionForType = 0;
-
       for (obj of un.values){       // Iterating on the groups of regions of each type
-
-        //console.log(obj.key.split(', '),'//////',obj.value);
-
         if(obj.key.includes(reg)){
-
           var valueOfRegionForType = valueOfRegionForType + obj.value;
-
         };
-
-        console.log(obj.key.includes(reg));
-        console.log(reg + valueOfRegionForType);
-
       }
-
       tableRegionType.push({
         type: un.key,
         region: reg,
         value: valueOfRegionForType
       });
-
     });
 
-    console.log(tableRegionType);
-    console.log(un.values,'///////',un.key);
+    // console.log(tableRegionType);
+
   }
 
   typeParRegion.forEach(function(type){
@@ -143,20 +120,24 @@ d3.json("WeaponsDB.json", d => {
 
   })
 
-  console.log(histDat);
+  // console.log(histDat);
 
   // Definire des echelles
-  var echelleX = d3.scaleLinear()
+  echelleX = d3.scaleLinear()
       .domain([0,d3.max(histDat, d => d.sum)])
       .range([20, 500]);
 
-  // // Definire des couleure
-  // const echelleC = d3.scaleLinear()
-  //     .domain([0,d3.max(partype, d => d.value)])
-  //     .range(['blue','red']);
+ resteBoxHist = canvasBarres.append('rect')
+    .attr('width', width / 4)
+    .attr('height', height / 4)
+    .attr('id', 'reset_hist')
+    .classed('clickReset', true)
+    .on('click', histReset);
 
   // Ajouter les barres
-  let barres = canvasBarres.selectAll('rect')
+  barres = canvasBarres
+  .append('g')
+  .selectAll('rect')
       .data(histDat)
       .enter()
       .append('rect')
@@ -165,10 +146,13 @@ d3.json("WeaponsDB.json", d => {
           .attr('width', d => echelleX(d.sum))
           .attr('height', 10)
           .attr('fill', 'gray')
-          .attr('class', 'barres');
+          .attr('class', 'feature')
+          .on('click', histClick);
 
   // Ajouter labels
-  let labels = canvasBarres.selectAll('text')
+  labels = canvasBarres
+  .append('g')
+  .selectAll('text')
       .data(histDat)
       .enter()
       .append('text')
@@ -179,60 +163,79 @@ d3.json("WeaponsDB.json", d => {
           .attr('class', 'labels')
           .attr('font-size', '10')
 
-    canvasBarres.append('g')
-      .classed('axeX', true)
-      .attr('transform', 'translate(0,180)')
-      .call(d3.axisBottom(echelleX));
+  canvasBarres.append('g')
+    .classed('axeX', true)
+    .attr('transform', 'translate(0,180)')
+    .call(d3.axisBottom(echelleX));
 
   // -------------------------------------------------  //
-  // On click of map polygon
-  document.querySelector("path")
-    .addEventListener('click', function(e){
-      e.preventDefault();
 
-      // update echelleX
-      echelleX = d3.scaleLinear()
-          .domain([0,d3.max(histDat, d => d.easternEurope)])
-          .range([20, 500]);
+  // let regenHisto = function (d) {
+  //   var idPoly = d.properties['FIPS'];
+  //
+    // appartenances = [{
+    //   centralAmerica: 'AC'},
+    //   {centralAsia: 'NP'},
+    //   {eastAsia: 'MC'},
+    //   {easternEurope: 'RO'},
+    //   {middleEastNorthAfrica: 'AJ'},
+    //   {northAmerica: 'GL'},
+    //   {pacific: 'NH'},
+    //   {southAmerica: 'BR'},
+    //   {southAsia: 'BM'},
+    //   {subSaharanAfrica: 'GH'},
+    //   {westernEurope: 'GM'}]
 
-      // update barres
-      let barres = canvasBarres.selectAll('rect')
-          .data(histDat)
-          .transition()
-          .duration(200)
-              .attr('x', 20)
-              .attr('y', (d,i) => (i*14)+10)
-              .attr('width', d => echelleX(d.easternEurope))
-              .attr('height', 10)
-              .attr('fill', 'gray')
-              .attr('class', 'barres');
+  //
+  //   console.log(idPoly);
+  // }
+  // // update echelleX
+  // echelleX = d3.scaleLinear()
+  //     .domain([0,d3.max(histDat, d => d.easternEurope)])
+  //     .range([20, 500]);
+  //
+  // // update barres
+  // let barres = canvasBarres.selectAll('rect')
+  //     .data(histDat)
+  //     .transition()
+  //     .duration(200)
+  //         .attr('x', 20)
+  //         .attr('y', (d,i) => (i*14)+10)
+  //         .attr('width', d => echelleX(d.easternEurope))
+  //         .attr('height', 10)
+  //         .attr('fill', 'gray')
+  //         .attr('class', 'barres');
+  //
+  // // update text
+  // let labels = canvasBarres.selectAll('text')
+  //     .data(histDat)
+  //     .transition()
+  //     .duration(200)
+  //         .attr('x', d => echelleX(d.easternEurope)+30)
+  //         .attr('y', (d,i) => (i*14)+18)
+  //         .text(d => d.type)
+  //         .attr('fill','white')
+  //         .attr('class', 'labels')
+  //         .attr('font-size', '10')
+  //
+  //   d3.select('.axeX').remove();
+  //
+  //   canvasBarres.append('g')
+  //     .classed('axeX', true)
+  //     .attr('transform', 'translate(0,180)')
+  //     .call(d3.axisBottom(echelleX));
 
-      // update text
-      let labels = canvasBarres.selectAll('text')
-          .data(histDat)
-          .transition()
-          .duration(200)
-              .attr('x', d => echelleX(d.easternEurope)+30)
-              .attr('y', (d,i) => (i*14)+18)
-              .text(d => d.type)
-              .attr('fill','white')
-              .attr('class', 'labels')
-              .attr('font-size', '10')
-
-        d3.select('.axeX').remove();
-
-        canvasBarres.append('g')
-          .classed('axeX', true)
-          .attr('transform', 'translate(0,180)')
-          .call(d3.axisBottom(echelleX));
 
 
-    })
+
+
+  // var names = ['westernEurope', 'easternEurope', 'middleEastNorthAfrica',
+  //  'subSaharanAfrica', 'centralAsia', 'southAsia', 'eastAsia', 'pacific',
+  //   'northAmerica', 'centralAmerica', 'southAmerica']
+
 
 
 // -------------------------- //
-
-
 
   // Réseau Generer les noeuds
   // partype: Father node
@@ -245,7 +248,7 @@ d3.json("WeaponsDB.json", d => {
         })
         .entries(d)
 
-  console.log(partype);
+  //console.log(partype);
 
   var nodes = [];
 
@@ -257,12 +260,12 @@ d3.json("WeaponsDB.json", d => {
     })
   }
 
-  console.log(nodes);
+  //console.log(nodes);
 
   // parent weapons
   var parWeap = d.filter(d => d.name.includes('variants'));
 
-  console.log(parWeap);
+  //console.log(parWeap);
 
   for (i in parWeap){
     var strig = parWeap[i].name.match(/(\+)(\d+)/g)[0];
@@ -276,12 +279,12 @@ d3.json("WeaponsDB.json", d => {
     })
   }
 
-  console.log(nodes);
+  //console.log(nodes);
 
   // variants
   var varWeap = d.filter(d => d.name.includes('- Variant of'))
 
-  console.log(varWeap);
+  //console.log(varWeap);
 
   for (i in varWeap){
     nodes.push({
@@ -291,7 +294,7 @@ d3.json("WeaponsDB.json", d => {
     })
   }
 
-  console.log(nodes);
+  //console.log(nodes);
 
   // Generer les liens
   var liens = [];
@@ -308,15 +311,15 @@ d3.json("WeaponsDB.json", d => {
     }
   }
 
-  console.log(liens);
+  //console.log(liens);
 
   // type à variant
   for (n of varWeap){
          var shrtnm = n.name;
-         console.log(shrtnm);
+         //console.log(shrtnm);
          var regex = /(?:- Variant of )(.+$)/;
          var shortName = shrtnm.match(regex);
-         console.log(shortName);
+         //console.log(shortName);
          if(shortName){
            var parentWeap = parWeap.filter(d => d.name.includes(shortName[1]));
              liens.push({
@@ -326,7 +329,7 @@ d3.json("WeaponsDB.json", d => {
          }
 
   }
-  console.log(liens);
+  //console.log(liens);
 
   var links = liens
   console.log(links);
@@ -338,8 +341,6 @@ d3.json("WeaponsDB.json", d => {
   };
 
   console.log(data);
-
-  console.log(data.links[0]);
 
   // Color scale nodes
   var echelleLiens1 = d3.scaleOrdinal()
@@ -393,6 +394,536 @@ d3.json("WeaponsDB.json", d => {
   node
        .attr("cx", function (d) { return d.x; })
        .attr("cy", function(d) { return d.y; });
-}
+  }
+
+  function histClick(d) {
+    if (active === d) return histReset();
+    d3.select('#hist').selectAll(".active").classed('active', false);
+    d3.select(this).classed('active', active = d);
+    console.log(this);
+
+// interactivité avec réseau
+    console.log(this.__data__.type);
+
+    if(this.__data__.type === 'Pistol') {
+    }
+
+
+  }
+
+  function histReset() {
+      d3.select('#hist').selectAll(".active").classed("active", active = false);
+      d3.select('#hist').transition().duration(450).attr('transform','');
+      console.log(this);
+  }
 
 });
+
+function mapClick(d) {
+  if (active === d) return reset();
+  canevas.selectAll(".active").classed('active', false);
+  d3.select(this).classed('active', active = d);
+
+  console.log('suck my dick MAX <3');   //-----------------------------------
+  console.log(this.__data__.properties['FIPS']);  //-----------------------------------
+
+  // let updBarres(changer) => d3.select('#hist').selectAll('rect')
+  //     .data(histDat)
+  //     .transition()
+  //     .duration(200)
+  //         .attr('x', 20)
+  //         .attr('y', (d,i) => (i*14)+10)
+  //         .attr('width', changer)
+  //         .attr('height', 10)
+  //         .attr('fill', 'gray')
+  //         .attr('class', 'barres');
+  //
+  // let updTexte(changer) => d3.select('#hist').selectAll('rect')
+  //     .data(histDat)
+  //     .transition()
+  //     .duration(200)
+  //         .attr('x', 20)
+  //         .attr('y', (d,i) => (i*14)+10)
+  //         .attr('width', d => changer)
+  //         .attr('height', 10)
+  //         .attr('fill', 'gray')
+  //         .attr('class', 'barres');
+
+  nomPoly = this.__data__.properties['FIPS'];
+  // for (appa of appartenances){
+  //   console.log(Object.values(appa)[0]);
+  //   nameApp = Object.values(appa)[0];
+  //
+  //   if (nomPoly === nameApp){
+  //     echelleX = d3.scaleLinear()
+  //         .domain([0,d3.max(histDat, d => d.southAmerica)])
+  //         .range([20, 500]);
+  //
+  //     d3.select('#hist').selectAll('rect')
+  //         .data(histDat)
+  //         .transition()
+  //         .duration(200)
+  //             .attr('x', 20)
+  //             .attr('y', (d,i) => (i*14)+10)
+  //             .attr('width', d => echelleX(d.southAmerica))
+  //             .attr('height', 10)
+  //             .attr('fill', 'gray')
+  //             .attr('class', 'barres');
+  //
+  //     d3.selectAll('text')
+  //         .data(histDat)
+  //         .transition()
+  //         .duration(200)
+  //             .attr('x', d => echelleX(d.southAmerica)+30)
+  //             .attr('y', (d,i) => (i*14)+18)
+  //             .text(d => d.type)
+  //             .attr('fill','white')
+  //             .attr('class', 'labels')
+  //             .attr('font-size', '10')
+  //
+  //       d3.select('.axeX').remove();
+  //
+  //       d3.select('#hist').append('g')
+  //         .classed('axeX', true)
+  //         .attr('transform', 'translate(0,180)')
+  //         .call(d3.axisBottom(echelleX));
+  //   }
+  // }
+  if ( nomPoly === 'BR'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.southAmerica)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.southAmerica))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.southAmerica)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'GL'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.northAmerica)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.northAmerica))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.northAmerica)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'GM'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.easternEurope)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.easternEurope))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.easternEurope)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'NH'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.pacific)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.pacific))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.pacific)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'BM'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.southAsia)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.southAsia))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.southAsia)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'RO'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.easternEurope)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.easternEurope))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.easternEurope)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'NP'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.centralAsia)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.centralAsia))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.centralAsia)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'AC'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.centralAmerica)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.centralAmerica))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.centralAmerica)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'MC'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.eastAsia)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.eastAsia))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.eastAsia)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'AJ'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.middleEastNorthAfrica)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.middleEastNorthAfrica))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.middleEastNorthAfrica)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+  if ( nomPoly === 'GH'){
+    echelleX = d3.scaleLinear()
+        .domain([0,d3.max(histDat, d => d.subSaharanAfrica)])
+        .range([20, 500]);
+
+    d3.select('#hist').selectAll('rect')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', 20)
+            .attr('y', (d,i) => (i*14)+10)
+            .attr('width', d => echelleX(d.subSaharanAfrica))
+            .attr('height', 10)
+            .attr('fill', 'gray')
+            .attr('class', 'feature');
+
+    d3.selectAll('text')
+        .data(histDat)
+        .transition()
+        .duration(200)
+            .attr('x', d => echelleX(d.subSaharanAfrica)+30)
+            .attr('y', (d,i) => (i*14)+18)
+            .text(d => d.type)
+            .attr('fill','white')
+            .attr('class', 'labels')
+            .attr('font-size', '10')
+
+      d3.select('.axeX').remove();
+
+      d3.select('#hist').append('g')
+        .classed('axeX', true)
+        .attr('transform', 'translate(0,180)')
+        .call(d3.axisBottom(echelleX));
+
+
+  }
+}
+
+function reset() {
+  canevas.selectAll(".active").classed("active", active = false);
+  canevas.transition().duration(750).attr('transform','');
+  console.log('No you suck my dick Nico!');
+  console.log('reset for map');
+
+  echelleX = d3.scaleLinear()
+      .domain([0,d3.max(histDat, d => d.sum)])
+      .range([20, 500]);
+
+  d3.select('#hist').selectAll('rect')
+      .data(histDat)
+      .transition()
+      .duration(200)
+          .attr('x', 20)
+          .attr('y', (d,i) => (i*14)+10)
+          .attr('width', d => echelleX(d.sum))
+          .attr('height', 10)
+          .attr('fill', 'gray')
+          .attr('class', 'feature');
+
+  d3.selectAll('text')
+      .data(histDat)
+      .transition()
+      .duration(200)
+          .attr('x', d => echelleX(d.sum)+30)
+          .attr('y', (d,i) => (i*14)+18)
+          .text(d => d.type)
+          .attr('fill','white')
+          .attr('class', 'labels')
+          .attr('font-size', '10')
+
+    d3.select('.axeX').remove();
+
+    d3.select('#hist').append('g')
+      .classed('axeX', true)
+      .attr('transform', 'translate(0,180)')
+      .call(d3.axisBottom(echelleX));
+
+}
