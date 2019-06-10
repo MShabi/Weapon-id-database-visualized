@@ -14,7 +14,8 @@ Promise.all(promises).then(function(v, d) {
   // Making the network data from WeaponsDB
   var netwDataBuilder = function(d) {
     var nodes = [];
-        var liens = [];
+    var liens = [];
+
     // Réseau Generer les noeuds
     // partype: Father node
     var partype = d3.nest()
@@ -34,7 +35,8 @@ Promise.all(promises).then(function(v, d) {
       nodes.push({
         name: partype[i].key,
         degree: partype[i].value,
-        type: 'category'
+        type: 'category',
+        class: partype[i].key
       })
     }
 
@@ -43,7 +45,7 @@ Promise.all(promises).then(function(v, d) {
     // parent weapons
     var parWeap = d.filter(d => d.name.includes('variants'));
 
-    //console.log(parWeap);
+    console.log(parWeap);
 
     for (i in parWeap){
       var strig = parWeap[i].name.match(/(\+)(\d+)/g)[0];
@@ -53,7 +55,8 @@ Promise.all(promises).then(function(v, d) {
       nodes.push({
         name: parWeap[i].name,
         degree: intstrig,
-        type: 'type'
+        type: 'parent',
+        class: parWeap[i].type
       })
     }
 
@@ -62,17 +65,18 @@ Promise.all(promises).then(function(v, d) {
     // variants
     var varWeap = d.filter(d => d.name.includes('- Variant of'))
 
-    //console.log(varWeap);
+    // console.log(varWeap);
 
     for (i in varWeap){
       nodes.push({
         name: varWeap[i].name,
         degree: 1,
-        type: 'variant'
+        type: 'child',
+        class: varWeap[i].type
       })
     }
 
-    //console.log(nodes);
+  console.log(nodes);
 
     // Generer les liens
 
@@ -126,8 +130,8 @@ Promise.all(promises).then(function(v, d) {
   var drawNetw = function(data){
 
     // Color scale nodes
-    var echelleLiens1 = d3.scaleOrdinal()
-      .domain(['category', 'type', 'variant'])
+    var echelleCouleur = d3.scaleOrdinal()
+      .domain(['category', 'parent', 'child'])
       .range(['#d95f0e',  '#fec44f', '#fff7bc'])
 
     // size scale nodes
@@ -140,6 +144,7 @@ Promise.all(promises).then(function(v, d) {
       .append('svg')
       .attr('height', height / 1.5)
       .attr('width', (width / 3))
+      .attr('id', 'netw')
       .append('g')
 
     // initialize links
@@ -156,7 +161,7 @@ Promise.all(promises).then(function(v, d) {
       .append("circle")
         .attr("r", d => echelleTaille(d.degree))
         .attr('class', 'nodes')
-        .attr('fill', d => echelleLiens1(d.type) )
+        .attr('fill', d => echelleCouleur(d.type) )
 
     // Let's list the force we wanna apply on the network
     var simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
@@ -259,20 +264,20 @@ Promise.all(promises).then(function(v, d) {
         .attr('id', 'hist')
 
         // Definire des echelles
-        echelleX = d3.scaleLinear()
+        var echelleX = d3.scaleLinear()
             .domain([0,d3.max(histDat, d => d.sum)])
             .range([20, 500]);
 
-       // resteBoxHist = canvasBarres
+       // var resteBoxHist = canvasBarres
        //  .append('rect')
        //    .attr('width', width / 4)
        //    .attr('height', height / 4)
        //    .attr('id', 'reset_hist')
        //    .classed('clickReset', true)
-       //    //.on('click', histReset);
+          //.on('click', histReset);
 
         // Ajouter les barres
-        barres = canvasBarres
+        var barres = canvasBarres
         .append('g')
         .selectAll('rect')
             .data(histDat)
@@ -287,7 +292,7 @@ Promise.all(promises).then(function(v, d) {
                 .on('click', histClick);
 
         // Ajouter labels
-        labels = canvasBarres
+        var labels = canvasBarres
         .append('g')
         .selectAll('text')
             .data(histDat)
@@ -300,7 +305,8 @@ Promise.all(promises).then(function(v, d) {
                 .attr('class', 'labels')
                 .attr('font-size', '10')
 
-        canvasBarres.append('g')
+        // Ajouter axe
+        var axeDeX = canvasBarres.append('g')
           .classed('axeX', true)
           .attr('transform', 'translate(0,180)')
           .call(d3.axisBottom(echelleX));
@@ -354,19 +360,109 @@ Promise.all(promises).then(function(v, d) {
 
   // Clicking
   function histClick(d) {
+
     if (active === d) return histReset();
+
     d3.select('#hist').selectAll(".active").classed('active', false);
+
     d3.select(this).classed('active', active = d);
+
     console.log(this);
 
     // interactivité avec réseau
     console.log(this.__data__.type);
 
-    if(this.__data__.type === 'Pistol') {
+    var newNodes = netwDons.nodes.filter(d =>
+      d.class === this.__data__.type);
+
+    console.log(newNodes);
+
+    console.log(netwDons.links);
+
+    var interLinks = netwDons.links.map(d => [d.source.name,
+       d.source.class, d.target.name, d.target.class])
+
+    var newLinks = interLinks.filter(d => d[3] === this.__data__.type)
+        .map(d => ({
+          source: d[0],
+          target: d[2]
+        }));
+
+    var newNetwDat = {nodes: newNodes,links: newLinks};
+
+    console.log(newNetwDat.nodes[0].degree)
+    console.log(newNetwDat.nodes.map(d => d.degree));
+    // Color scale nodes
+    var echelleCouleur = d3.scaleOrdinal()
+      .domain(['category', 'parent', 'child'])
+      .range(['#d95f0e',  '#fec44f', '#fff7bc'])
+
+    // size scale nodes
+    var echelleTaille = d3.scaleLinear()
+      .domain([1,d3.max(newNetwDat.nodes, d => d.degree)])
+      .range([4,12])
+
+
+// d3.select('#netw').select('g').selectAll("line").remove();
+// d3.select('#netw').select('g').selectAll("circle").remove();
+
+
+    // initialize links
+    var link1 = d3.select('#netw')
+    .select('g')
+    .selectAll("line")
+      .data(newNetwDat.links)
+        .style("stroke", "#aaa")
+
+    // Initialize the nodes
+    var node = d3.select('#netw')
+    .select('g')
+    .selectAll("circle")
+      .data(newNetwDat.nodes)
+        .attr("r", d => echelleTaille(d.degree))
+        .attr('class', 'nodes')
+        .attr('fill', d => echelleCouleur(d.type) )
+
+    d3.select('#netw')
+    .select('g')
+    .selectAll("circle")
+    .data(newNetwDat.nodes)
+      .exit()
+      .remove();
+
+    d3.select('#netw')
+    .select('g')
+    .selectAll("line")
+    .data(newNetwDat.links)
+      .exit()
+      .remove();
+
+    console.log(node,link1);
+
+    // Let's list the force we wanna apply on the network
+    var simulation = d3.forceSimulation(newNetwDat.nodes)                 // Force algorithm is applied to data.nodes
+        .force("link", d3.forceLink()                               // This force provides links between nodes
+              .id(d => d.name)                     // This provide  the id of a node
+              .links(newNetwDat.links)                                    // and this the list of links
+
+        )
+        .force("charge", d3.forceManyBody().strength(-400))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+        .force("center", d3.forceCenter(width / 5, height /3))     // This force attracts nodes to the center of the svg area
+        .on("end", ticked);
+
+    function ticked() {
+    link1
+        .attr("x1", d => d.source.x )
+        .attr("y1", d => d.source.y )
+        .attr("x2", d => d.target.x )
+        .attr("y2", d => d.target.y );
+
+    node
+         .attr("cx", d => d.x )
+         .attr("cy", d => d.y );
     }
-
-
   }
+
   function mapClick(d) {
     if (active === d) return reset();
 
@@ -462,6 +558,7 @@ Promise.all(promises).then(function(v, d) {
       d3.select('#hist').selectAll(".active").classed("active", active = false);
       d3.select('#hist').transition().duration(450).attr('transform','');
       console.log(this);
+      hist;
   }
   function mapReset() {
     d3.select('#map').selectAll(".active").classed("active", active = false);
