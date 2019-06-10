@@ -1,0 +1,63 @@
+body{
+  background-color: #212f3c;
+}
+.clickReset{
+  fill: none;
+  pointer-events: all;
+}
+.feature.active {
+  fill: orange;
+}
+.feature.active:hover {
+  fill: #a04000;
+}
+.feature:hover {
+  fill: #5d6d7e;
+}
+.nodes{
+  stroke: gray;
+}
+
+.nodes:hover {
+  fill: gray;
+}
+.canevas{
+  stroke : black;
+  stroke-opacity : 0.5;
+}
+.barres:hover{
+  fill: orange;
+}
+.barres {
+  fill: #5d6d7e;
+}
+.axeX{
+  stroke: white;
+}
+.domain{
+  stroke: white;
+}
+.tick{
+  stroke: white;
+}
+.copyright {
+  position: absolute;
+  bottom: 0;
+  font-size: 8pt;
+  margin-bottom: 10px;
+}
+/* .map{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.hist{
+  position: absolute;
+  top: 20;
+  right: 0;
+}
+.net{
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
