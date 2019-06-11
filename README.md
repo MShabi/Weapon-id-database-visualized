@@ -68,7 +68,7 @@ For example, if you click on South America, the barplot will update to show you 
 
 **Network**: A network of the weapons. It can be filtered by selecting a type of weapon directly on the histogram. However it will only work if the world data is loaded on the barplot (no regions on the map must be selected).
 
-<p align="center"> ![network](/figures/weapons_network.PNG) </p>
+![network](/figures/weapons_network.PNG) 
 
 ## Use
 Given that this project is not yet hosted on a server, to visualize it you must run in locally. There are various ways of achieving this goal but below is a step-by-step explenation of how to locally run a server using python3.
