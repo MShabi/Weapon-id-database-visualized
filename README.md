@@ -3,7 +3,7 @@
 ## Description
 This web visualisation is base on the Weapons ID database provided by [Small Arms Survey](http://www.smallarmssurvey.org).
 
-## The Weapons ID Database
+## Weapons ID Database
 [Database](http://www.smallarmssurvey.org/weapons-and-markets/tools/weapons-id-database.html)
 
 *In response to growing demand for small arms identification resources, the Survey redesigned its Small Arms ID Cards into a comprehensive visual identification system. This database was developed with the support of the Royal Armouries UK, and features downloadable Weapons ID Sheets, which detail the visual information required to accurately identify and record particular types of weapons. With well over 30 varieties and copies of the original Kalashnikov assault rifle alone, this database is a valuable tool for any practitioners working in the field of small arms.* (Small Arms Survey)
