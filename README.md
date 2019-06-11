@@ -1,4 +1,4 @@
-# Weapons visualized across the world
+# Weapons visualised across the world
 
 ## Description
 This web visualisation is base on the Weapons ID database provided by [Small Arms Survey](http://www.smallarmssurvey.org).
