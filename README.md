@@ -14,9 +14,10 @@ This web visualisation is base on the Weapons ID database provided by [Small Arm
 
 ## Tools used
 <a href="https://d3js.org"><img src="https://d3js.org/logo.svg" align="left" hspace="10" vspace="6"></a>
-<img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" align="right" height="50">
+<img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" align="right" height="70">
 Use of the node library pupeteer allowed to extraction of data from the web (scrapping).
 Use of [d3.js](https://d3js.org/) allowed visualisations of different types (bar-plot, map and network) to be generated on the weapons categories distibuted around the world.
+
 
 
 
@@ -92,7 +93,7 @@ Same as Windows but using Terminal.
 ## Updating data
 An effort was made with this project to create a visualisation that can withstand changes made to the the original data. The script `weapscrap.js` fetches the data and saves is as `WeaponsDB.json` locally. This manipulation can be done every few months in oder to have the latest version of the database.
 
-### About Small Arms Survey:
+## About Small Arms Survey:
 *The Small Arms Survey provides expertise on all aspects of small arms and armed violence.*
 
 *As a global centre of excellence, the Small Arms Survey generates evidence-based, impartial, and policy-relevant knowledge and analysis on small arms and armed violence issues for governments, policy-makers, researchers, and civil society. The Survey is a project of the Graduate Institute of International and Development Studies in Geneva, Switzerland.*
