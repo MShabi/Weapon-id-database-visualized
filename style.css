@@ -48,3 +48,9 @@ body{
   font-size: 8pt;
   margin-bottom: 10px;
 }
+#title{
+  margin: 20px;
+}
+#hist{
+  margin-top: 10px;
+}

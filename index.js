@@ -11,6 +11,175 @@ files.forEach(function(url) {
 
 Promise.all(promises).then(function(v, d) {
 
+
+
+  // Making the histogram data from WeaponsDB
+  var histDataBuilder = function(d) {
+    // Nest données par type d'armes et région distribution
+    var typeParRegion = d3.nest()
+      .key(d => d.type)
+      .key(d => d.regions)
+      .rollup(function(d) { return d.length; })
+      .entries(d)
+      .sort((a,b) => d3.ascending(a.value,b.value))
+
+    console.log(typeParRegion);
+
+    // Régions de distribution, utilisé pour itérer
+    const regions = ["Western Europe", "Eastern Europe",
+    "Middle East & North Africa", "Sub-Saharan Africa", "Central Asia",
+    "South Asia", "East Asia", "Pacific", "North America", "Central America",
+    "South America"]
+
+    var histDat = [];
+
+    var tableRegionType = [];
+
+    for (un of typeParRegion){    //Iterate on nested by type and region data
+      regions.forEach(function(reg) { // Iterate on regions
+        var valueOfRegionForType = 0;
+        for (obj of un.values){       // Iterating on the groups of regions of each type
+          if(obj.key.includes(reg)){
+            var valueOfRegionForType = valueOfRegionForType + obj.value;
+          };
+        }
+        tableRegionType.push({
+          type: un.key,
+          region: reg,
+          value: valueOfRegionForType
+        });
+      });
+    }
+
+    typeParRegion.forEach(function(type){
+
+      var filtrParType = tableRegionType.filter(region =>
+        type.key===region.type);
+
+      console.log(filtrParType[0].value, filtrParType[0].type, filtrParType[0].region);
+      histDat.push({
+        type: filtrParType[0].type,
+        westernEurope: filtrParType[0].value,
+        easternEurope: filtrParType[1].value,
+        middleEastNorthAfrica: filtrParType[2].value,
+        subSaharanAfrica: filtrParType[3].value,
+        centralAsia: filtrParType[4].value,
+        southAsia: filtrParType[5].value,
+        eastAsia: filtrParType[6].value,
+        pacific: filtrParType[7].value,
+        northAmerica: filtrParType[8].value,
+        centralAmerica: filtrParType[9].value,
+        southAmerica: filtrParType[10].value,
+        sum: filtrParType[0].value + filtrParType[1].value + filtrParType[2].value + filtrParType[3].value + filtrParType[4].value + filtrParType[5].value + filtrParType[6].value + filtrParType[7].value + filtrParType[8].value + filtrParType[9].value + filtrParType[10].value
+      })
+    })
+    console.log(histDat);
+    return histDat;
+  }
+
+  // Drawing histogram
+  var drawHist = function(histDat) {
+    var canvasBarres = d3.select('body')
+      .append('svg')
+        .attr('height', height / 2)
+        .attr('width', width / 2)
+        .attr('id', 'hist')
+
+        // Definire des echelles
+        var echelleX = d3.scaleLinear()
+            .domain([0,d3.max(histDat, d => d.sum)])
+            .range([20, 500]);
+
+       // var resteBoxHist = canvasBarres
+       //  .append('rect')
+       //    .attr('width', width / 4)
+       //    .attr('height', height / 4)
+       //    .attr('id', 'reset_hist')
+       //    .classed('clickReset', true)
+          //.on('click', histReset);
+
+        // Ajouter les barres
+        var barres = canvasBarres
+        .append('g')
+        .selectAll('rect')
+            .data(histDat)
+            .enter()
+            .append('rect')
+                .attr('x', 20)
+                .attr('y', (d,i) => (i*24)+10)
+                .attr('width', d => echelleX(d.sum))
+                .attr('height', 19)
+                .attr('fill', 'gray')
+                .attr('class', 'feature')
+                .on('click', histClick);
+
+        // Ajouter labels
+        var labels = canvasBarres
+        .append('g')
+        .selectAll('text')
+            .data(histDat)
+            .enter()
+            .append('text')
+                .attr('x', d => echelleX(d.sum)+30)
+                .attr('y', (d,i) => (i*24)+23)
+                .text(d => d.type)
+                .attr('fill','white')
+                .attr('class', 'labels')
+                .attr('font-size', '10')
+
+        // Ajouter axe
+        var axeDeX = canvasBarres.append('g')
+          .classed('axeX', true)
+          .attr('transform', 'translate(0,297)')
+          .call(d3.axisBottom(echelleX));
+  }
+
+  // Running Histogram
+  var don = histDataBuilder(v[0]);
+  var hist = drawHist(don);
+
+  // console.log(don[5]);
+  // Setup map data
+  var mapSetup = function(donnees){
+    // Creation canevas
+    var canevas = d3.select('body')
+      .append('svg')
+      .attr('id', 'map')
+      .attr('height', height / 2)
+      .attr('width', width / 2.5 )
+      .append('g')
+
+    // Choix de projection
+    const maProjection = d3.geoKavrayskiy7().scale(100).translate([220,160]);
+
+    // la passer en paramètre du générateur de chemins
+    const genererChemins = d3.geoPath().projection(maProjection);
+
+    // ici, les données sont chargées
+    const region_id = topojson.feature(donnees, donnees.objects.regionsPoly);
+
+    var rectClickRstMap = canevas
+      .append('rect')
+        .attr('width', width / 2)
+        .attr('height', height / 2)
+        .attr('fill', 'none')
+        .attr('pointer-events', 'all')
+        .on('click', mapReset)
+
+    var chemins = canevas.selectAll('path')
+      .data(region_id.features)
+      .enter()
+      .append('path')
+        .attr('class','feature')
+        .attr('d', genererChemins)
+        .on('click', mapClick);
+
+    return canevas
+  }
+
+  //Running map
+  var map = mapSetup(v[1]);
+
   // Making the network data from WeaponsDB
   var netwDataBuilder = function(d) {
     var nodes = [];
@@ -143,7 +312,7 @@ Promise.all(promises).then(function(v, d) {
     var svg = d3.select('body')
       .append('svg')
       .attr('height', height / 1.5)
-      .attr('width', (width / 3))
+      .attr('width', (width / 1.3))
       .attr('id', 'netw')
       .append('g')
 
@@ -190,173 +359,6 @@ Promise.all(promises).then(function(v, d) {
   // Running network
   var netwDons = netwDataBuilder(v[0]);
   var netw = drawNetw(netwDons);
-
-  // Making the histogram data from WeaponsDB
-  var histDataBuilder = function(d) {
-    // Nest données par type d'armes et région distribution
-    var typeParRegion = d3.nest()
-      .key(d => d.type)
-      .key(d => d.regions)
-      .rollup(function(d) { return d.length; })
-      .entries(d)
-      .sort((a,b) => d3.ascending(a.value,b.value))
-
-    console.log(typeParRegion);
-
-    // Régions de distribution, utilisé pour itérer
-    const regions = ["Western Europe", "Eastern Europe",
-    "Middle East & North Africa", "Sub-Saharan Africa", "Central Asia",
-    "South Asia", "East Asia", "Pacific", "North America", "Central America",
-    "South America"]
-
-    var histDat = [];
-
-    var tableRegionType = [];
-
-    for (un of typeParRegion){    //Iterate on nested by type and region data
-      regions.forEach(function(reg) { // Iterate on regions
-        var valueOfRegionForType = 0;
-        for (obj of un.values){       // Iterating on the groups of regions of each type
-          if(obj.key.includes(reg)){
-            var valueOfRegionForType = valueOfRegionForType + obj.value;
-          };
-        }
-        tableRegionType.push({
-          type: un.key,
-          region: reg,
-          value: valueOfRegionForType
-        });
-      });
-    }
-
-    typeParRegion.forEach(function(type){
-
-      var filtrParType = tableRegionType.filter(region =>
-        type.key===region.type);
-
-      console.log(filtrParType[0].value, filtrParType[0].type, filtrParType[0].region);
-      histDat.push({
-        type: filtrParType[0].type,
-        westernEurope: filtrParType[0].value,
-        easternEurope: filtrParType[1].value,
-        middleEastNorthAfrica: filtrParType[2].value,
-        subSaharanAfrica: filtrParType[3].value,
-        centralAsia: filtrParType[4].value,
-        southAsia: filtrParType[5].value,
-        eastAsia: filtrParType[6].value,
-        pacific: filtrParType[7].value,
-        northAmerica: filtrParType[8].value,
-        centralAmerica: filtrParType[9].value,
-        southAmerica: filtrParType[10].value,
-        sum: filtrParType[0].value + filtrParType[1].value + filtrParType[2].value + filtrParType[3].value + filtrParType[4].value + filtrParType[5].value + filtrParType[6].value + filtrParType[7].value + filtrParType[8].value + filtrParType[9].value + filtrParType[10].value
-      })
-    })
-    console.log(histDat);
-    return histDat;
-  }
-
-  // Drawing histogram
-  var drawHist = function(histDat) {
-    var canvasBarres = d3.select('body')
-      .append('svg')
-        .attr('height', height / 2)
-        .attr('width', width / 1.5)
-        .attr('id', 'hist')
-
-        // Definire des echelles
-        var echelleX = d3.scaleLinear()
-            .domain([0,d3.max(histDat, d => d.sum)])
-            .range([20, 500]);
-
-       // var resteBoxHist = canvasBarres
-       //  .append('rect')
-       //    .attr('width', width / 4)
-       //    .attr('height', height / 4)
-       //    .attr('id', 'reset_hist')
-       //    .classed('clickReset', true)
-          //.on('click', histReset);
-
-        // Ajouter les barres
-        var barres = canvasBarres
-        .append('g')
-        .selectAll('rect')
-            .data(histDat)
-            .enter()
-            .append('rect')
-                .attr('x', 20)
-                .attr('y', (d,i) => (i*14)+10)
-                .attr('width', d => echelleX(d.sum))
-                .attr('height', 10)
-                .attr('fill', 'gray')
-                .attr('class', 'feature')
-                .on('click', histClick);
-
-        // Ajouter labels
-        var labels = canvasBarres
-        .append('g')
-        .selectAll('text')
-            .data(histDat)
-            .enter()
-            .append('text')
-                .attr('x', d => echelleX(d.sum)+30)
-                .attr('y', (d,i) => (i*14)+18)
-                .text(d => d.type)
-                .attr('fill','white')
-                .attr('class', 'labels')
-                .attr('font-size', '10')
-
-        // Ajouter axe
-        var axeDeX = canvasBarres.append('g')
-          .classed('axeX', true)
-          .attr('transform', 'translate(0,180)')
-          .call(d3.axisBottom(echelleX));
-  }
-
-  // Running Histogram
-  var don = histDataBuilder(v[0]);
-  var hist = drawHist(don);
-
-  // console.log(don[5]);
-  // Setup map data
-  var mapSetup = function(donnees){
-    // Creation canevas
-    var canevas = d3.select('body')
-      .append('svg')
-      .attr('id', 'map')
-      .attr('height', height / 1.5)
-      .attr('width', width / 4 )
-      .append('g')
-
-    // Choix de projection
-    const maProjection = d3.geoKavrayskiy7().scale(80).translate([width /7 ,height/5 ]);
-
-    // la passer en paramètre du générateur de chemins
-    const genererChemins = d3.geoPath().projection(maProjection);
-
-    // ici, les données sont chargées
-    const region_id = topojson.feature(donnees, donnees.objects.regionsPoly);
-
-    var rectClickRstMap = canevas
-      .append('rect')
-        .attr('width', width / 2)
-        .attr('height', height / 2)
-        .attr('fill', 'none')
-        .attr('pointer-events', 'all')
-        .on('click', mapReset)
-
-    var chemins = canevas.selectAll('path')
-      .data(region_id.features)
-      .enter()
-      .append('path')
-        .attr('class','feature')
-        .attr('d', genererChemins)
-        .on('click', mapClick);
-
-    return canevas
-  }
-
-  //Running map
-  var map = mapSetup(v[1]);
 
   // Clicking
   function histClick(d) {
@@ -524,9 +526,9 @@ Promise.all(promises).then(function(v, d) {
             .transition()
             .duration(200)
                 .attr('x', 20)
-                .attr('y', (d,i) => (i*14)+10)
+                .attr('y', (d,i) => (i*24)+10)
                 .attr('width', d => echelleX(d[1]))
-                .attr('height', 10)
+                .attr('height', 19)
                 .attr('fill', 'gray')
                 //.attr('class', 'barres');
 
@@ -535,7 +537,7 @@ Promise.all(promises).then(function(v, d) {
             .transition()
             .duration(200)
                 .attr('x', d => echelleX(d[1])+30)
-                .attr('y', (d,i) => (i*14)+18)
+                .attr('y', (d,i) => (i*24)+23)
                 .text(d => d[0])
                 .attr('fill','white')
                 .attr('class', 'labels')
@@ -546,7 +548,7 @@ Promise.all(promises).then(function(v, d) {
         let ajoutNouvAxe = d3.select('#hist')
           .append('g')
           .classed('axeX', true)
-          .attr('transform', 'translate(0,180)')
+          .attr('transform', 'translate(0,297)')
           .call(d3.axisBottom(echelleX));
       }
     })
@@ -575,9 +577,9 @@ Promise.all(promises).then(function(v, d) {
         .transition()
         .duration(200)
             .attr('x', 20)
-            .attr('y', (d,i) => (i*14)+10)
+            .attr('y', (d,i) => (i*24)+10)
             .attr('width', d => echelleX(d.sum))
-            .attr('height', 10)
+            .attr('height', 19)
             .attr('fill', 'gray')
             .attr('class', 'feature');
 
@@ -586,7 +588,7 @@ Promise.all(promises).then(function(v, d) {
         .transition()
         .duration(200)
             .attr('x', d => echelleX(d.sum)+30)
-            .attr('y', (d,i) => (i*14)+18)
+            .attr('y', (d,i) => (i*24)+23)
             .text(d => d.type)
             .attr('fill','white')
             .attr('class', 'labels')
@@ -596,7 +598,7 @@ Promise.all(promises).then(function(v, d) {
 
       d3.select('#hist').append('g')
         .classed('axeX', true)
-        .attr('transform', 'translate(0,180)')
+        .attr('transform', 'translate(0,297)')
         .call(d3.axisBottom(echelleX));
 
   }
