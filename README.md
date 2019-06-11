@@ -20,6 +20,8 @@ This web visualisation is base on the Weapons ID database provided by [Small Arm
 Use of the node library pupeteer allowed to extraction of data from the web (scrapping)
 <img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" height="200" align="right">
 Use of [d3.js](https://d3js.org/) allowed visualisations of different types (bar-plot, map and network) to be generated on the weapons categories distibuted around the world.
+<a href="https://d3js.org"><img src="https://d3js.org/logo.svg" align="left" hspace="10" vspace="6"></a>
+
 
 ## Data
 Each entrie of the Database represents a model of a weapon. It can either be a parent model, meaning it contains variants, or a variant model, meaning it contains a father model.
