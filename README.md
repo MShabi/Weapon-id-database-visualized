@@ -14,13 +14,15 @@ This web visualisation is base on the Weapons ID database provided by [Small Arm
 [Database](http://www.smallarmssurvey.org/weapons-and-markets/tools/weapons-id-database.html)
 
 *In response to growing demand for small arms identification resources, the Survey redesigned its Small Arms ID Cards into a comprehensive visual identification system. This database was developed with the support of the Royal Armouries UK, and features downloadable Weapons ID Sheets, which detail the visual information required to accurately identify and record particular types of weapons. With well over 30 varieties and copies of the original Kalashnikov assault rifle alone, this database is a valuable tool for any practitioners working in the field of small arms.* (Small Arms Survey)
+
 ![Weapond ID Database screenshot](/figures/weapIdDb.png)
 
 ## Tools used
+<a href="https://d3js.org"><img src="https://d3js.org/logo.svg" align="left" hspace="10" vspace="6"></a>
 Use of the node library pupeteer allowed to extraction of data from the web (scrapping)
 <img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" height="200" align="right">
 Use of [d3.js](https://d3js.org/) allowed visualisations of different types (bar-plot, map and network) to be generated on the weapons categories distibuted around the world.
-<a href="https://d3js.org"><img src="https://d3js.org/logo.svg" align="left" hspace="10" vspace="6"></a>
+
 
 
 ## Data
@@ -68,6 +70,7 @@ For example, if you click on South America, the barplot will update to show you 
 ![capture](/figures/histExplained.png)
 
 **Map**: Works as a filter for the barplot as well as its reset. When mouse hovers over a region, it changes color. On click, the barplot will be modified and to reset back to the original you must click in the ocean.
+
 ![polygons](/figures/mapHover.png)
 
 **Network**: A network of the weapons. It can be filtered by selecting a type of weapon directly on the histogram. However it will only work if the world data is loaded on the barplot (no regions on the map must be selected).
