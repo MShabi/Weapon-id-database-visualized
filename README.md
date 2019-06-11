@@ -14,7 +14,7 @@ This web visualisation is base on the Weapons ID database provided by [Small Arm
 
 ## Tools used
 <a href="https://d3js.org"><img src="https://d3js.org/logo.svg" align="left" hspace="10" vspace="6"></a>
-<img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" hspace='5' vspace='3' align="right">
+<img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" align="right" height="50">
 Use of the node library pupeteer allowed to extraction of data from the web (scrapping).
 Use of [d3.js](https://d3js.org/) allowed visualisations of different types (bar-plot, map and network) to be generated on the weapons categories distibuted around the world.
 
