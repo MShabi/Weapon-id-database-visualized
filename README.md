@@ -3,13 +3,6 @@
 ## Description
 This web visualisation is base on the Weapons ID database provided by [Small Arms Survey](http://www.smallarmssurvey.org).
 
-### About Small Arms Survey:
-*The Small Arms Survey provides expertise on all aspects of small arms and armed violence.*
-
-*As a global centre of excellence, the Small Arms Survey generates evidence-based, impartial, and policy-relevant knowledge and analysis on small arms and armed violence issues for governments, policy-makers, researchers, and civil society. The Survey is a project of the Graduate Institute of International and Development Studies in Geneva, Switzerland.*
-
-*The Survey has an international staff with expertise in security studies, political science, law, economics, development studies, sociology, and criminology. About half of the Survey’s team is based in Geneva. The Survey also has an office in Washington DC.* (Small Arms Survey)
-
 ## The Weapons ID Database
 [Database](http://www.smallarmssurvey.org/weapons-and-markets/tools/weapons-id-database.html)
 
@@ -94,6 +87,13 @@ Same as Windows but using Terminal.
 
 ## Updating data
 An effort was made with this project to create a visualisation that can withstand changes made to the the original data. The script `weapscrap.js` fetches the data and saves is as `WeaponsDB.json` locally. This manipulation can be done every few months in oder to have the latest version of the database.
+
+### About Small Arms Survey:
+*The Small Arms Survey provides expertise on all aspects of small arms and armed violence.*
+
+*As a global centre of excellence, the Small Arms Survey generates evidence-based, impartial, and policy-relevant knowledge and analysis on small arms and armed violence issues for governments, policy-makers, researchers, and civil society. The Survey is a project of the Graduate Institute of International and Development Studies in Geneva, Switzerland.*
+
+*The Survey has an international staff with expertise in security studies, political science, law, economics, development studies, sociology, and criminology. About half of the Survey’s team is based in Geneva. The Survey also has an office in Washington DC.* (Small Arms Survey)
 
 ## Autors
 All work preset here was made by Nicolas Rojas & Maxime Shabi as evaluation for "Visualisation de données", a master class by prof. Isaac Pante at University of Lausanne - Spring 2019.
