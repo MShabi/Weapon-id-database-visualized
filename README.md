@@ -56,6 +56,8 @@ The information provided for each entry is: `Type`, `Name`, `Calibre`, `Distribu
 - Central America
 - South America
 
+Other than the WeaponId database we use polygons of regions `regionsPoly.json` that were done by hand (with the help of QGIS) using the polygon data from: https://thematicmapping.org/downloads/world_borders.php
+
 ## Interface
 Interface is composed by tree elements: a barplot, a map and a network. 
 
