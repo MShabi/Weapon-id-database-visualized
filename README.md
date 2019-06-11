@@ -17,12 +17,13 @@ This web visualisation is base on the Weapons ID database provided by [Small Arm
 ![Weapond ID Database screenshot](/figures/weapIdDb.png)
 
 ## Tools used
-Use of the node library pupeteer allowed to extraction of data from the web (scrapping)![puppeteer](https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png)
+Use of the node library pupeteer allowed to extraction of data from the web (scrapping)
+<img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" height="200" align="right">
 Use of [d3.js](https://d3js.org/) allowed visualisations of different types (bar-plot, map and network) to be generated on the weapons categories distibuted around the world.
 
 ## Data
 Each entrie of the Database represents a model of a weapon. It can either be a parent model, meaning it contains variants, or a variant model, meaning it contains a father model.
-The information provided for each entrie is: `Type`, `Name`, `Calibre`, `Distribution`, `Features`, `PDF`. This visualisation only takes into account `Type`, `Name`, and `Distribution`.
+The information provided for each entry is: `Type`, `Name`, `Calibre`, `Distribution`, `Features`, `PDF`. This visualisation only takes into account `Type`, `Name`, and `Distribution`.
 
 `Type` is separated in 12 different categories of weapons:
 
