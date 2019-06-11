@@ -3,6 +3,8 @@
 ## Description
 This web visualisation is base on the Weapons ID database provided by [Small Arms Survey](http://www.smallarmssurvey.org).
 
+![Dashboard view](/figures/dash.png)
+
 ## Weapons ID Database
 [Database](http://www.smallarmssurvey.org/weapons-and-markets/tools/weapons-id-database.html)
 
