@@ -1,9 +1,9 @@
-var files = ["WeaponsDB.json", "regionsPoly.json"];
-var promises = [];
+const files = ["WeaponsDB.json", "regionsPoly.json"];
+let promises = [];
 let height = window.innerHeight;
 let width = window.innerWidth;
-var active;
-var activeHist;
+let active;
+let activeHist;
 
 files.forEach(function(url) {
     promises.push(d3.json(url))
@@ -12,35 +12,33 @@ files.forEach(function(url) {
 Promise.all(promises).then(function(v, d) {
 
 
-
   // Making the histogram data from WeaponsDB
-  var histDataBuilder = function(d) {
-    // Nest données par type d'armes et région distribution
-    var typeParRegion = d3.nest()
+  let histDataBuilder = function(d) {
+
+    // Nest data by type of arm and region
+    let typeParRegion = d3.nest()
       .key(d => d.type)
       .key(d => d.regions)
       .rollup(function(d) { return d.length; })
       .entries(d)
       .sort((a,b) => d3.ascending(a.value,b.value))
 
-    console.log(typeParRegion);
-
-    // Régions de distribution, utilisé pour itérer
+    // Regions of distribution, used later to iterate
     const regions = ["Western Europe", "Eastern Europe",
     "Middle East & North Africa", "Sub-Saharan Africa", "Central Asia",
     "South Asia", "East Asia", "Pacific", "North America", "Central America",
     "South America"]
 
-    var histDat = [];
+    let histDat = [];
 
-    var tableRegionType = [];
+    let tableRegionType = [];
 
     for (un of typeParRegion){    //Iterate on nested by type and region data
       regions.forEach(function(reg) { // Iterate on regions
-        var valueOfRegionForType = 0;
+        let valueOfRegionForType = 0;
         for (obj of un.values){       // Iterating on the groups of regions of each type
           if(obj.key.includes(reg)){
-            var valueOfRegionForType = valueOfRegionForType + obj.value;
+            valueOfRegionForType = valueOfRegionForType + obj.value;
           };
         }
         tableRegionType.push({
@@ -53,10 +51,9 @@ Promise.all(promises).then(function(v, d) {
 
     typeParRegion.forEach(function(type){
 
-      var filtrParType = tableRegionType.filter(region =>
+      let filtrParType = tableRegionType.filter(region =>
         type.key===region.type);
 
-      console.log(filtrParType[0].value, filtrParType[0].type, filtrParType[0].region);
       histDat.push({
         type: filtrParType[0].type,
         westernEurope: filtrParType[0].value,
@@ -73,20 +70,19 @@ Promise.all(promises).then(function(v, d) {
         sum: filtrParType[0].value + filtrParType[1].value + filtrParType[2].value + filtrParType[3].value + filtrParType[4].value + filtrParType[5].value + filtrParType[6].value + filtrParType[7].value + filtrParType[8].value + filtrParType[9].value + filtrParType[10].value
       })
     })
-    console.log(histDat);
     return histDat;
   }
 
   // Drawing histogram
-  var drawHist = function(histDat) {
-    var canvasBarres = d3.select('body')
+  let drawHist = function(histDat) {
+    let canvasBarres = d3.select('body')
       .append('svg')
         .attr('height', height / 2)
         .attr('width', width / 2)
         .attr('id', 'hist')
 
-        // Definire des echelles
-        var echelleX = d3.scaleLinear()
+        // Defining scale for hist
+        let echelleX = d3.scaleLinear()
             .domain([0,d3.max(histDat, d => d.sum)])
             .range([20, 500]);
 
@@ -98,8 +94,8 @@ Promise.all(promises).then(function(v, d) {
        //    .classed('clickReset', true)
           //.on('click', histReset);
 
-        // Ajouter les barres
-        var barres = canvasBarres
+        // Add bars
+        let barres = canvasBarres
         .append('g')
         .selectAll('rect')
             .data(histDat)
@@ -113,8 +109,8 @@ Promise.all(promises).then(function(v, d) {
                 .attr('class', 'feature')
                 .on('click', histClick);
 
-        // Ajouter labels
-        var labels = canvasBarres
+        // Add labels
+        let labels = canvasBarres
         .append('g')
         .selectAll('text')
             .data(histDat)
@@ -127,38 +123,38 @@ Promise.all(promises).then(function(v, d) {
                 .attr('class', 'labels')
                 .attr('font-size', '10')
 
-        // Ajouter axe
-        var axeDeX = canvasBarres.append('g')
+        // Add axis
+        let axeDeX = canvasBarres.append('g')
           .classed('axeX', true)
           .attr('transform', 'translate(0,297)')
           .call(d3.axisBottom(echelleX));
   }
 
   // Running Histogram
-  var don = histDataBuilder(v[0]);
-  var hist = drawHist(don);
+  let don = histDataBuilder(v[0]);
+  let hist = drawHist(don);
 
-  // console.log(don[5]);
   // Setup map data
-  var mapSetup = function(donnees){
-    // Creation canevas
-    var canevas = d3.select('body')
+  let mapSetup = function(donnees){
+    // Creating canevas
+    let canevas = d3.select('body')
       .append('svg')
       .attr('id', 'map')
       .attr('height', height / 2)
       .attr('width', width / 2.5 )
       .append('g')
 
-    // Choix de projection
+    // Chosing a projection
     const maProjection = d3.geoKavrayskiy7().scale(100).translate([220,160]);
 
-    // la passer en paramètre du générateur de chemins
+    // path generator
     const genererChemins = d3.geoPath().projection(maProjection);
 
-    // ici, les données sont chargées
+    // loading topojson data
     const region_id = topojson.feature(donnees, donnees.objects.regionsPoly);
 
-    var rectClickRstMap = canevas
+    // Reset rectangle behind map
+    let rectClickRstMap = canevas
       .append('rect')
         .attr('width', width / 2)
         .attr('height', height / 2)
@@ -166,7 +162,8 @@ Promise.all(promises).then(function(v, d) {
         .attr('pointer-events', 'all')
         .on('click', mapReset)
 
-    var chemins = canevas.selectAll('path')
+    // Drawing the polygons
+    let chemins = canevas.selectAll('path')
       .data(region_id.features)
       .enter()
       .append('path')
@@ -178,16 +175,15 @@ Promise.all(promises).then(function(v, d) {
   }
 
   //Running map
-  var map = mapSetup(v[1]);
+  let map = mapSetup(v[1]);
 
   // Making the network data from WeaponsDB
-  var netwDataBuilder = function(d) {
-    var nodes = [];
-    var liens = [];
+  let netwDataBuilder = function(d) {
+    let nodes = [];
+    let liens = [];
 
-    // Réseau Generer les noeuds
-    // partype: Father node
-    var partype = d3.nest()
+    // Nodes: types of weapons pistol,sniper,...
+    let partype = d3.nest()
       .key(function(d){
         return d.type;
       })
@@ -195,10 +191,6 @@ Promise.all(promises).then(function(v, d) {
             return d.length;
           })
           .entries(d)
-
-    //console.log(partype);
-
-
 
     for (i in partype){
       nodes.push({
@@ -209,17 +201,13 @@ Promise.all(promises).then(function(v, d) {
       })
     }
 
-    //console.log(nodes);
-
     // parent weapons
-    var parWeap = d.filter(d => d.name.includes('variants'));
-
-    console.log(parWeap);
+    let parWeap = d.filter(d => d.name.includes('variants'));
 
     for (i in parWeap){
-      var strig = parWeap[i].name.match(/(\+)(\d+)/g)[0];
+      let strig = parWeap[i].name.match(/(\+)(\d+)/g)[0];
 
-      var intstrig = parseInt(strig);
+      let intstrig = parseInt(strig);
 
       nodes.push({
         name: parWeap[i].name,
@@ -229,12 +217,8 @@ Promise.all(promises).then(function(v, d) {
       })
     }
 
-    //console.log(nodes);
-
     // variants
-    var varWeap = d.filter(d => d.name.includes('- Variant of'))
-
-    // console.log(varWeap);
+    let varWeap = d.filter(d => d.name.includes('- Variant of'))
 
     for (i in varWeap){
       nodes.push({
@@ -245,12 +229,7 @@ Promise.all(promises).then(function(v, d) {
       })
     }
 
-  console.log(nodes);
-
-    // Generer les liens
-
-
-    // category à type
+    // Links: from a type to a parent weapon
     for (i in partype) {
       for (j in parWeap) {
         if (partype[i].key == parWeap[j].type){
@@ -262,17 +241,13 @@ Promise.all(promises).then(function(v, d) {
       }
     }
 
-    //console.log(liens);
-
-    // type à variant
+    // Links: from a parent to a variant
     for (n of varWeap){
-           var shrtnm = n.name;
-           //console.log(shrtnm);
-           var regex = /(?:- Variant of )(.+$)/;
-           var shortName = shrtnm.match(regex);
-           //console.log(shortName);
+           let shrtnm = n.name;
+           let regex = /(?:- Variant of )(.+$)/;
+           let shortName = shrtnm.match(regex);
            if(shortName){
-             var parentWeap = parWeap.filter(d => d.name.includes(shortName[1]));
+             let parentWeap = parWeap.filter(d => d.name.includes(shortName[1]));
                liens.push({
                  source: parentWeap[0].name,
                  target: shrtnm
@@ -280,36 +255,33 @@ Promise.all(promises).then(function(v, d) {
            }
 
     }
-    //console.log(liens);
 
-    var links = liens
-    console.log(links);
+    let links = liens
 
     // Making data file
-    var data = {
+    let data = {
       nodes: nodes,
       links: links
     };
 
-    console.log(data);
     return data;
   }
 
   // Drawing network
-  var drawNetw = function(data){
+  let drawNetw = function(data){
 
     // Color scale nodes
-    var echelleCouleur = d3.scaleOrdinal()
+    let echelleCouleur = d3.scaleOrdinal()
       .domain(['category', 'parent', 'child'])
       .range(['#d95f0e',  '#fec44f', '#fff7bc'])
 
     // size scale nodes
-    var echelleTaille = d3.scaleLinear()
+    let echelleTaille = d3.scaleLinear()
       .domain([1,57])
       .range([2,12])
 
-    // Simple network:
-    var svg = d3.select('body')
+    // Simple network
+    let svg = d3.select('body')
       .append('svg')
       .attr('height', height / 1.5)
       .attr('width', (width / 1.3))
@@ -317,14 +289,14 @@ Promise.all(promises).then(function(v, d) {
       .append('g')
 
     // initialize links
-    var link = svg.selectAll("line")
+    let link = svg.selectAll("line")
       .data(data.links)
       .enter()
       .append("line")
         .style("stroke", "#aaa")
 
     // Initialize the nodes
-    var node = svg.selectAll("circle")
+    let node = svg.selectAll("circle")
       .data(data.nodes)
       .enter()
       .append("circle")
@@ -333,7 +305,7 @@ Promise.all(promises).then(function(v, d) {
         .attr('fill', d => echelleCouleur(d.type) )
 
     // Let's list the force we wanna apply on the network
-    var simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
+    let simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
         .force("link", d3.forceLink()                               // This force provides links between nodes
               .id(function(d,i) { return d.name; })                     // This provide  the id of a node
               .links(data.links)                                    // and this the list of links
@@ -357,8 +329,8 @@ Promise.all(promises).then(function(v, d) {
   }
 
   // Running network
-  var netwDons = netwDataBuilder(v[0]);
-  var netw = drawNetw(netwDons);
+  let netwDons = netwDataBuilder(v[0]);
+  let netw = drawNetw(netwDons);
 
   // Clicking
   function histClick(d) {
@@ -369,38 +341,28 @@ Promise.all(promises).then(function(v, d) {
 
     d3.select(this).classed('active', active = d);
 
-    console.log(this);
-
-    // interactivité avec réseau
-    console.log(this.__data__.type);
-
-    var newNodes = netwDons.nodes.filter(d =>
+    // Interactivity with network
+    let newNodes = netwDons.nodes.filter(d =>
       d.class === this.__data__.type);
 
-    console.log(newNodes);
-
-    console.log(netwDons.links);
-
-    var interLinks = netwDons.links.map(d => [d.source.name,
+    let interLinks = netwDons.links.map(d => [d.source.name,
        d.source.class, d.target.name, d.target.class])
 
-    var newLinks = interLinks.filter(d => d[3] === this.__data__.type)
+    let newLinks = interLinks.filter(d => d[3] === this.__data__.type)
         .map(d => ({
           source: d[0],
           target: d[2]
         }));
 
-    var newNetwDat = {nodes: newNodes,links: newLinks};
+    let newNetwDat = {nodes: newNodes,links: newLinks};
 
-    console.log(newNetwDat.nodes[0].degree)
-    console.log(newNetwDat.nodes.map(d => d.degree));
     // Color scale nodes
-    var echelleCouleur = d3.scaleOrdinal()
+    let echelleCouleur = d3.scaleOrdinal()
       .domain(['category', 'parent', 'child'])
       .range(['#d95f0e',  '#fec44f', '#fff7bc'])
 
     // size scale nodes
-    var echelleTaille = d3.scaleLinear()
+    let echelleTaille = d3.scaleLinear()
       .domain([1,d3.max(newNetwDat.nodes, d => d.degree)])
       .range([4,12])
 
@@ -410,14 +372,14 @@ Promise.all(promises).then(function(v, d) {
 
 
     // initialize links
-    var link1 = d3.select('#netw')
+    let link1 = d3.select('#netw')
     .select('g')
     .selectAll("line")
       .data(newNetwDat.links)
         .style("stroke", "#aaa")
 
     // Initialize the nodes
-    var node = d3.select('#netw')
+    let node = d3.select('#netw')
     .select('g')
     .selectAll("circle")
       .data(newNetwDat.nodes)
@@ -439,10 +401,8 @@ Promise.all(promises).then(function(v, d) {
       .exit()
       .remove();
 
-    console.log(node,link1);
-
     // Let's list the force we wanna apply on the network
-    var simulation = d3.forceSimulation(newNetwDat.nodes)                 // Force algorithm is applied to data.nodes
+    let simulation = d3.forceSimulation(newNetwDat.nodes)                 // Force algorithm is applied to data.nodes
         .force("link", d3.forceLink()                               // This force provides links between nodes
               .id(d => d.name)                     // This provide  the id of a node
               .links(newNetwDat.links)                                    // and this the list of links
@@ -468,15 +428,15 @@ Promise.all(promises).then(function(v, d) {
   function mapClick(d) {
     if (active === d) return reset();
 
-    var asd = d3.selectAll(".active").classed('active', false);
+    let asd = d3.selectAll(".active").classed('active', false);
 
     d3.select(this).classed('active', active = d);
 
-    var nomPoly = this.__data__.properties['FIPS'];
+    let nomPoly = this.__data__.properties['FIPS'];
 
-    var fips = ['BR', 'GL', 'GM', 'NH', 'BM', 'RO', 'NP', 'AC', 'MC', 'AJ', 'GH']
+    let fips = ['BR', 'GL', 'GM', 'NH', 'BM', 'RO', 'NP', 'AC', 'MC', 'AJ', 'GH']
 
-    var clickDon;
+    let clickDon;
 
     fips.forEach(fip => {
       if (nomPoly == fip){
@@ -559,14 +519,11 @@ Promise.all(promises).then(function(v, d) {
   function histReset() {
       d3.select('#hist').selectAll(".active").classed("active", active = false);
       d3.select('#hist').transition().duration(450).attr('transform','');
-      console.log(this);
       hist;
   }
   function mapReset() {
     d3.select('#map').selectAll(".active").classed("active", active = false);
     d3.select('#map').selectAll(".active").transition().duration(750).attr('transform','');
-
-    console.log('reset for map');
 
     echelleX = d3.scaleLinear()
         .domain([0,d3.max(don, d => d.sum)])
