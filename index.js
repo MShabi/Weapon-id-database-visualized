@@ -11,7 +11,6 @@ files.forEach(function(url) {
 
 Promise.all(promises).then(function(v, d) {
 
-
   // Making the histogram data from WeaponsDB
   let histDataBuilder = function(d) {
 
@@ -128,6 +127,16 @@ Promise.all(promises).then(function(v, d) {
           .classed('axeX', true)
           .attr('transform', 'translate(0,297)')
           .call(d3.axisBottom(echelleX));
+
+        // Add axis label
+        let labelAxe = canvasBarres.append("text")
+          .attr("transform",
+                "translate(" + (width / 5.2) + " ," +
+                               (height / 2.25) + ")")
+          .style("text-anchor", "middle")
+          .attr('fill', 'white')
+          .attr('font-size','12')
+          .text("Frequency");
   }
 
   // Running Histogram
